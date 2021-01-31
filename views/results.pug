@@ -1,0 +1,54 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+  link(rel='stylesheet' href='/css/index.css')
+  title Ph downloader
+.cover-container.d-flex.h-100.p-3.mx-auto.flex-column
+  header.masthead.mb-auto
+    .inner
+      h3.masthead-brand Ph-downloader
+      nav.nav.nav-masthead.justify-content-center
+        a.nav-link.active(href='#') Ph
+        a.nav-link(href='#') Xv
+  main.inner.cover(role='main')
+    h1.cover-heading Paste Ph url
+    p.lead example: https://www.ph.com/view_video.php?viewkey=ph5fe020dc7eba5
+    p.lead
+      .input-group.mb-3
+        .input-group-append
+          select.form-select(required='')
+            option(value='') Select type
+            option(value='url') URL
+            option(value='search') Search
+        input.form-control(type='text' id='basic-url search-q-input' aria-describedby='basic-addon3')
+        .input-group-prepend
+          button#submit-btn.btn.btn-default(type='button') Submit
+  table.table
+    thead
+      tr
+        th(scope='col') Title
+        th(scope='col') Views
+        th(scope='col') Link
+        th(scope='col') Download
+    tbody
+      for item in results
+        tr
+          td= item.title
+          td= item.views
+          td= item.link
+          td= item.download_urls
+          //- td
+          //-   a(href=`${item.download_urls}` download) donwload
+            
+
+  footer.mastfoot.mt-auto
+    .inner
+      p Site by someone.
+
+
+script(src='https://code.jquery.com/jquery-3.5.1.min.js' integrity='sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=' crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
+script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')
+script(src='/js/search.js')
